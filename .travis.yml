@@ -7,11 +7,11 @@ install:
   - npm install spm coveralls
 
 before_script:
+  - node_modules/spm/bin/spm-config registry http://timo.moekit.com
   - node_modules/spm/bin/spm-install
 
 script:
   - node_modules/spm/bin/spm-test
-  - node_modules/spm/bin/spm-config registry http://timo.moekit.com
 
 after_success:
   - node_modules/spm/bin/spm-test --coveralls | node_modules/.bin/coveralls
