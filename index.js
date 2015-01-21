@@ -25,7 +25,7 @@ ooxxer.prototype._initCookie = function() {
 	} else {
 		domain = scope + '.' + Config.getMainDomain();
 	}
-	this.store = new CookieStore('fe_', {
+	this.store = new CookieStore('fe_' + this.o.scope + '_', {
 		domain: domain,
 		path: '/',
 		expires: 365
